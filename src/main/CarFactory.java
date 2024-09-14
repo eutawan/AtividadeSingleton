@@ -1,6 +1,8 @@
 package main;
 
 public class CarFactory {
+    // atributos para manter o controle da quantidade de carros criados para cada modelo
+    // Singleton
     private static CarFactory instance;
     private int sedanQnt = 0;
     private int suvQnt = 0;
@@ -16,6 +18,7 @@ public class CarFactory {
         return instance;
     }
 
+    // Metodo de construcao e verificacao do carro criado
     public  void  buildCar(String model) {
         switch (model) {
             case "Sedan":
@@ -39,6 +42,7 @@ public class CarFactory {
 
         }
     }
+    // Metodo para gerar um relatorio dos carros vendidos e mostrar o carro mais vendido
     public void gerarRelatorio(){
         System.out.println("\nRelatório de carros vendidos:");
         System.out.println("Sedan: " + sedanQnt + " unidades vendidas");
